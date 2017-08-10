@@ -18,6 +18,8 @@
     <!-- Theme CSS -->
     <?= $this->Html->css("clean-blog.min"); ?>
 
+    <!-- CakePHP CSS -->
+
     <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
@@ -59,7 +61,6 @@
         </div>
         <!-- /.container -->
     </nav>
-
     <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
     <header class="intro-header" style="background-image: url('/my_blog/webroot/img/home-bg2.jpg')">
@@ -75,7 +76,7 @@
             </div>
         </div>
     </header>
-
+        <?= $this->Flash->render(); ?>
     <!-- Main Content -->
     <div class="container">
         <div class="row">

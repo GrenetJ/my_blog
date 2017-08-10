@@ -13,10 +13,10 @@ class NewsletterTable extends Table
 
   public function validationDefault(Validator $validator) {
     $validator
-      ->requirePresence("mail")
+      ->requirePresence("mail", true)
+      ->notEmpty("mail")
       ->email("mail");
 
-    debug($validator);
     return $validator;
   }
 }
