@@ -2,7 +2,7 @@
 
 <?php foreach ($articles as $article): ?>
 
-      <a href="post.html">
+      <a href="<?= $article->url ?>">
           <h2 class="post-title">
               <?= $article["title"]; ?>
           </h2>
@@ -13,5 +13,5 @@
       <p class="post-meta">Posted by <a href="#"><?= $article["id_createur"]; ?></a> on <?= $article["date_creation"]; ?></p>
       </div>
       <hr>
-      
+
 <?php endforeach; ?>

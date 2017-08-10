@@ -2,6 +2,7 @@
   namespace App\Controller;
 
   use Cake\Controller\Controller;
+  use Cake\Routing\Router;
   use Cake\Event\Event;
 
   class HomeController extends AppController
@@ -19,7 +20,15 @@
 
           $query = $this->Articles->find("all", array("limit" => "5"));
           $articles = $query->all();
+
           if (!$articles->isEmpty()) {
+              foreach ($articles as $key => $article) {
+                $articles->toArray()[$key]->url = Router::Url(array(
+                    "controller" => "articles",
+                    "action" => "post",
+                    "?" => array("id" => $articles->toArray()[$key]["id"])
+                ));
+              }
               $this->set("articles", $articles);
           } else {
               echo "vide !";
