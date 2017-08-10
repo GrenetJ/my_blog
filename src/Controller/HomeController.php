@@ -26,7 +26,7 @@
                 $articles->toArray()[$key]->url = Router::Url(array(
                     "controller" => "articles",
                     "action" => "post",
-                    "?" => array("id" => $articles->toArray()[$key]["id"])
+                    "id" => $articles->toArray()[$key]["id"]
                 ));
               }
               $this->set("articles", $articles);
