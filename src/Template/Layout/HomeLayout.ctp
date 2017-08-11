@@ -55,6 +55,9 @@
                     <li>
                         <a href="contact.html">Contact</a>
                     </li>
+                    <li>
+                        <a href="<?= $this->Url->build(array("controller" => "admin" , "action" => "home")); ?>">Admin</a>
+                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

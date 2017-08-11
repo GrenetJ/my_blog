@@ -7,14 +7,13 @@ use Cake\Network\Exception\NotFoundException;
 class ArticlesController extends AppController {
 
   function post($post_id) {
-
-    try {
-        $article = $this->Articles->get($post_id);
+    if (isset($post_id)) {
+      $article = $this->Articles->get($post_id);
+      $this->set("article", $article);
     }
-    catch (\Exception $e) {
-      throw new NotFoundException(__('Article not found'));
+    else {
+      new NotFoundException();
     }
-    die();
   }
 }
 
